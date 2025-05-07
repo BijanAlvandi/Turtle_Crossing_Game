@@ -12,15 +12,14 @@ class Player(Turtle):
         self.color("black")
         self.penup()
         self.goto(STARTING_POSITION)
-
-    def rotation(self):
-        current_angle = self.heading()
-        if current_angle == 0:
-            self.left(90)
-        if current_angle == 180:
-            self.right(90)
-        
+        self.setheading(90)
 
     def go_up(self):
         y_new = self.ycor() + MOVE_DISTANCE
         self.goto(self.xcor(), y_new)
+
+    def is_at_finish(self):
+        return self.ycor() > FINISH_LINE_Y
+
+    def reset_position(self):
+        self.goto(STARTING_POSITION)
