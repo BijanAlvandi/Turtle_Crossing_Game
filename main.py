@@ -17,5 +17,5 @@ game_is_on = True
 while game_is_on:
     time.sleep(0.1)
     screen.update()
-    player.rotation()
-    car_manager.spawn_car
+    car_manager.spawn_car()
+    car_manager.move_cars()
