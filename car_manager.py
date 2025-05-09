@@ -15,7 +15,7 @@ class CarManager:
         attempts = 0
         while attempts < 10:
             candidate_y = random.randint(-280, 280)
-            recent_cars = self.cars[-4:]
+            recent_cars = self.cars[-8:]
             # Check that this candidate is at least 40px away from each recent car
             if all(abs(candidate_y - car.ycor()) > 40 for car in recent_cars):
                 new_car = Turtle()

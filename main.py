@@ -13,9 +13,17 @@ car_manager = CarManager()
 screen.listen()
 screen.onkey(player.go_up, "Up")
 
+frame_counter = 0
+
 game_is_on = True
 while game_is_on:
     time.sleep(0.1)
     screen.update()
-    car_manager.spawn_car()
+    frame_counter += 1
+    if frame_counter % 6 == 0:
+        car_manager.spawn_car()
     car_manager.move_cars()
+    if player.is_at_finish():
+
+        car_manager.increase_speed()
+        player.reset_position()
