@@ -10,6 +10,7 @@ screen.tracer(0)
 
 player = Player()
 car_manager = CarManager()
+scoreboard = Scoreboard()
 screen.listen()
 screen.onkey(player.go_up, "Up")
 
@@ -24,6 +25,8 @@ while game_is_on:
         car_manager.spawn_car()
     car_manager.move_cars()
     if player.is_at_finish():
-
-        car_manager.increase_speed()
+        scoreboard.increase_score()
+        scoreboard.update_score()
         player.reset_position()
+        car_manager.increase_speed()
+
