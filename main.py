@@ -24,6 +24,9 @@ while game_is_on:
     if frame_counter % 6 == 0:
         car_manager.spawn_car()
     car_manager.move_cars()
+    if car_manager.check_collision(player):
+        game_is_on = False
+        scoreboard.game_over()
     if player.is_at_finish():
         scoreboard.increase_score()
         scoreboard.update_score()
