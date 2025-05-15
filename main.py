@@ -27,6 +27,7 @@ while game_is_on:
     if car_manager.check_collision(player):
         game_is_on = False
         scoreboard.game_over()
+        screen.update()
     if player.is_at_finish():
         scoreboard.increase_score()
         scoreboard.update_score()
