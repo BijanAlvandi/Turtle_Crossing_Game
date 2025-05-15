@@ -34,3 +34,4 @@ while game_is_on:
         player.reset_position()
         car_manager.increase_speed()
 
+screen.exitonclick()
