@@ -5,6 +5,7 @@ COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
 STARTING_MOVE_DISTANCE = 5
 MOVE_INCREMENT = 10
 
+
 class CarManager:
     def __init__(self):
         self.cars = []
@@ -36,3 +37,9 @@ class CarManager:
 
     def increase_speed(self):
         self.move_distance += MOVE_INCREMENT
+
+    def check_collision(self, player):
+        for car in self.cars:
+            if car.distance(player) < 30:
+                return True
+        return False
